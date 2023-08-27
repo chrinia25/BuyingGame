@@ -1,25 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://b42nhub75mchu"]
+[gd_scene load_steps=10 format=3 uid="uid://b42nhub75mchu"]
 
 [ext_resource type="Script" path="res://RefreshTimerText.gd" id="1_5hq6s"]
 [ext_resource type="Script" path="res://PurchaceButton.gd" id="1_d61tc"]
 [ext_resource type="Script" path="res://RefreshTimer.gd" id="2_rnb7b"]
-[ext_resource type="Texture2D" uid="uid://db66kmg7s103b" path="res://Assets/Images/9l_lEijpjY4XacXu60YNuTIOqdPduU1dri9UAYu5agxoPaZkj66hf_5bDy5IYN2Z3WwimeqvVeYPyPuIDVl-5g.webp" id="4_6kue1"]
-[ext_resource type="Script" path="res://ShopItem.gd" id="4_51h83"]
 [ext_resource type="Script" path="res://SoldOut.gd" id="5_k2ao2"]
 [ext_resource type="Texture2D" uid="uid://dxlofyqs6lfg8" path="res://Assets/Images/gold.png" id="7_cvxua"]
+[ext_resource type="PackedScene" uid="uid://bsabl6us7vi6" path="res://item.tscn" id="7_on1na"]
 [ext_resource type="Script" path="res://priceindicator.gd" id="8_khh3u"]
 [ext_resource type="Texture2D" uid="uid://bmaewe2fvxat1" path="res://Assets/Images/상점.png" id="9_mi2mb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7vvrf"]
 load_path = "res://.godot/imported/soldout.png-9370d3e5ae6d100ca8cea51bb56a8acd.ctex"
 
-[node name="shop" type="Node"]
+[node name="shop" type="Node2D"]
 
 [node name="RefreshTimerText" type="RichTextLabel" parent="."]
-offset_left = 156.0
-offset_top = 575.0
-offset_right = 468.0
-offset_bottom = 605.0
+offset_left = 108.0
+offset_top = 569.0
+offset_right = 420.0
+offset_bottom = 599.0
 scale = Vector2(1.0377, 1.52877)
 text = "상점 초기화까지 x초 남음"
 script = ExtResource("1_5hq6s")
@@ -38,10 +37,6 @@ offset_bottom = 88.0
 text = "사기
 "
 script = ExtResource("1_d61tc")
-
-[node name="ShopItem" type="Sprite2D" parent="ShopSlot1"]
-texture = ExtResource("4_6kue1")
-script = ExtResource("4_51h83")
 
 [node name="SoldOut" type="Sprite2D" parent="ShopSlot1"]
 position = Vector2(6, 9)
@@ -63,6 +58,9 @@ offset_bottom = -73.3425
 scale = Vector2(11.5759, 9.06901)
 text = "100
 "
+
+[node name="Item" parent="ShopSlot1" instance=ExtResource("7_on1na")]
+position = Vector2(-659, -262)
 
 [node name="shopbackground" type="Sprite2D" parent="."]
 z_index = -1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsabl6us7vi6"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_ou7vc"]
+[ext_resource type="Script" path="res://ItemDescription.gd" id="2_pdys0"]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_ou7vc")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+
+[node name="ItemDescription" type="RichTextLabel" parent="ItemSprite"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_pdys0")

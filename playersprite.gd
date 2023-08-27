@@ -1,11 +1,15 @@
-extends Timer
+extends Sprite2D
 
+var tiltcounter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.start(30.0)
-	pass # Replace with function body.
+	tiltcounter = 0.0
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	tiltcounter += delta
+	if tiltcounter > 1.0:
+		tiltcounter = 0.0
+		self.rotation = -self.rotation

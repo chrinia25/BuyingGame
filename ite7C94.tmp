@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsabl6us7vi6"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_ou7vc"]
+[ext_resource type="Texture2D" uid="uid://dnv2fqd7hw3mo" path="res://Assets/Images/items/대검.png" id="2_ffgrs"]
+[ext_resource type="Script" path="res://ItemDescription.gd" id="2_pdys0"]
+[ext_resource type="Script" path="res://ItemSprite.gd" id="3_a0b0d"]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_ou7vc")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(659, 259)
+texture = ExtResource("2_ffgrs")
+script = ExtResource("3_a0b0d")
+
+[node name="ItemDescription" type="RichTextLabel" parent="ItemSprite"]
+offset_left = 49.0
+offset_top = -22.0
+offset_right = 356.0
+offset_bottom = 18.0
+fit_content = true
+script = ExtResource("2_pdys0")

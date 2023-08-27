@@ -1,0 +1,652 @@
+[gd_scene load_steps=59 format=3 uid="uid://3rd7wmuit7uv"]
+
+[ext_resource type="Script" path="res://RefreshTimerText.gd" id="1_e3xw8"]
+[ext_resource type="Texture2D" uid="uid://y1pjv0giqp2d" path="res://Assets/Images/longbackground.png" id="2_37a8s"]
+[ext_resource type="Script" path="res://ShopSlot1.gd" id="2_rpmd5"]
+[ext_resource type="Script" path="res://battlewindow.gd" id="3_7cole"]
+[ext_resource type="Script" path="res://PurchaceButton.gd" id="3_eck7c"]
+[ext_resource type="Texture2D" uid="uid://cksatlxsnubik" path="res://Assets/Images/player.png" id="4_gr2g7"]
+[ext_resource type="Script" path="res://SoldOut.gd" id="4_m0cp7"]
+[ext_resource type="Script" path="res://playersprite.gd" id="5_c7fsy"]
+[ext_resource type="Texture2D" uid="uid://dxlofyqs6lfg8" path="res://Assets/Images/gold.png" id="5_d7gdj"]
+[ext_resource type="Script" path="res://Inventory.gd" id="6_pki1n"]
+[ext_resource type="Script" path="res://priceindicator.gd" id="6_yty4e"]
+[ext_resource type="Script" path="res://item.gd" id="7_qvhcx"]
+[ext_resource type="Texture2D" uid="uid://uwggosvqmulr" path="res://Assets/Images/items/검.png" id="8_bb11c"]
+[ext_resource type="Texture2D" uid="uid://cfwpnyf5avt4j" path="res://Assets/Images/items/단검.png" id="8_k8u40"]
+[ext_resource type="Script" path="res://ItemSprite.gd" id="9_gg424"]
+[ext_resource type="Texture2D" uid="uid://bwjvejos86fg7" path="res://Assets/Images/items/갑옷.png" id="9_ynsdi"]
+[ext_resource type="Texture2D" uid="uid://dxhcwv22hn8p0" path="res://Assets/Images/black.png" id="10_5ohnb"]
+[ext_resource type="Texture2D" uid="uid://cf4cudjm8ecp4" path="res://Assets/Images/items/로브.png" id="10_5p8fi"]
+[ext_resource type="Texture2D" uid="uid://dnv2fqd7hw3mo" path="res://Assets/Images/items/대검.png" id="10_jhws4"]
+[ext_resource type="Texture2D" uid="uid://eactoj5cd33y" path="res://Assets/Images/items/지팡이.png" id="11_20d4i"]
+[ext_resource type="Script" path="res://ItemDescription.gd" id="11_joksw"]
+[ext_resource type="Texture2D" uid="uid://jk5pbpmyu3x6" path="res://Assets/Images/items/일반배경.png" id="12_5q6qj"]
+[ext_resource type="Texture2D" uid="uid://ll4jo6sr10si" path="res://Assets/Images/items/스태프.png" id="12_ttfok"]
+[ext_resource type="Texture2D" uid="uid://c4gpqak2m7fiy" path="res://Assets/Images/items/언커먼배경.png" id="13_8grc8"]
+[ext_resource type="Texture2D" uid="uid://u70mocntamvm" path="res://Assets/Images/items/오브.png" id="13_un8m8"]
+[ext_resource type="Texture2D" uid="uid://ctcf5rjc8kxk5" path="res://Assets/Images/items/레어배경.png" id="14_ncl03"]
+[ext_resource type="Texture2D" uid="uid://t2lxckybowip" path="res://Assets/Images/items/에픽배경.png" id="15_1wdi2"]
+[ext_resource type="Texture2D" uid="uid://6mo3eftf5g81" path="res://Assets/Images/items/레전더리배경.png" id="16_8dieg"]
+[ext_resource type="Texture2D" uid="uid://bmaewe2fvxat1" path="res://Assets/Images/상점.png" id="17_7avrt"]
+[ext_resource type="Script" path="res://ItemSprite2.gd" id="18_euo2y"]
+[ext_resource type="Script" path="res://Itemslot1.gd" id="23_kiqwd"]
+[ext_resource type="Script" path="res://globalvariables.gd" id="23_rupef"]
+[ext_resource type="Script" path="res://ShopSlot3.gd" id="24_57q7h"]
+[ext_resource type="Script" path="res://slot1sprite.gd" id="24_n1mxj"]
+[ext_resource type="Script" path="res://Button.gd" id="25_pvmny"]
+[ext_resource type="Script" path="res://armor.gd" id="26_8n6w3"]
+[ext_resource type="Script" path="res://goldindicator.gd" id="26_c02m5"]
+[ext_resource type="Script" path="res://ItemSprite3.gd" id="27_fxvud"]
+[ext_resource type="Script" path="res://ShopSlot4.gd" id="30_0arbj"]
+[ext_resource type="Script" path="res://ItemSprite4.gd" id="31_g71nu"]
+[ext_resource type="Texture2D" uid="uid://0i852co5pvc3" path="res://Assets/Images/일시정지.png" id="33_aih8n"]
+[ext_resource type="Script" path="res://playerstat.gd" id="34_qi5jb"]
+[ext_resource type="Script" path="res://playerstats.gd" id="35_g3wfa"]
+[ext_resource type="Script" path="res://playerweapon.gd" id="38_bh2hf"]
+[ext_resource type="Script" path="res://slot2sprite.gd" id="40_f2lpg"]
+[ext_resource type="Script" path="res://Itemslot2.gd" id="40_u044d"]
+[ext_resource type="Script" path="res://ehp.gd" id="45_2hl6v"]
+[ext_resource type="Script" path="res://hp.gd" id="45_jeuo5"]
+[ext_resource type="Texture2D" uid="uid://bct76ag6xin45" path="res://Assets/Images/게자식.png" id="47_xpkwm"]
+[ext_resource type="Script" path="res://battler.gd" id="49_xt1am"]
+[ext_resource type="Script" path="res://gameover.gd" id="51_omlw5"]
+[ext_resource type="Script" path="res://endscreen.gd" id="51_vhuv6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7vvrf"]
+load_path = "res://.godot/imported/soldout.png-9370d3e5ae6d100ca8cea51bb56a8acd.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shnt7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bb11c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k8u40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jhws4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_20d4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ttfok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_un8m8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ynsdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5p8fi")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu2m3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_5q6qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8grc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ncl03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1wdi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8dieg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jen0w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bb11c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k8u40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jhws4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_20d4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ttfok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_un8m8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6rpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bb11c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k8u40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jhws4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_20d4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ttfok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_un8m8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1bld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bb11c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k8u40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jhws4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_20d4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ttfok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_un8m8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ynsdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5p8fi")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="main" type="Node2D"]
+
+[node name="shop" type="Node2D" parent="."]
+z_index = -2
+position = Vector2(652, -8)
+scale = Vector2(1.11121, 1.03501)
+
+[node name="RefreshTimerText" type="RichTextLabel" parent="shop"]
+offset_left = 108.0
+offset_top = 569.0
+offset_right = 420.0
+offset_bottom = 599.0
+scale = Vector2(1.0377, 1.52877)
+text = "상점 초기화까지 x초 남음"
+script = ExtResource("1_e3xw8")
+
+[node name="shopbackground" type="Sprite2D" parent="shop"]
+z_index = -1
+position = Vector2(244, 322)
+scale = Vector2(1.33367, 1.28)
+texture = ExtResource("17_7avrt")
+
+[node name="ShopSlot1" type="Sprite2D" parent="shop"]
+position = Vector2(92, 166)
+script = ExtResource("2_rpmd5")
+
+[node name="Button" type="Button" parent="shop/ShopSlot1"]
+offset_left = -21.0
+offset_top = 57.0
+offset_right = 19.0
+offset_bottom = 88.0
+text = "사기
+"
+script = ExtResource("3_eck7c")
+
+[node name="SoldOut" type="Sprite2D" parent="shop/ShopSlot1"]
+position = Vector2(6, 9)
+scale = Vector2(0.479025, 0.535691)
+texture = SubResource("CompressedTexture2D_7vvrf")
+script = ExtResource("4_m0cp7")
+
+[node name="priceindicator" type="Sprite2D" parent="shop/ShopSlot1"]
+position = Vector2(-40.7046, 48.4906)
+scale = Vector2(0.082109, 0.0882284)
+texture = ExtResource("5_d7gdj")
+script = ExtResource("6_yty4e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/ShopSlot1/priceindicator"]
+offset_left = 0.000488281
+offset_top = -98.5566
+offset_right = 116.0
+offset_bottom = -58.5566
+scale = Vector2(11.5759, 9.06901)
+
+[node name="Item" type="Node2D" parent="shop/ShopSlot1"]
+position = Vector2(-677.848, -157.304)
+script = ExtResource("7_qvhcx")
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="shop/ShopSlot1/Item"]
+z_index = 1
+position = Vector2(676.74, 157.486)
+sprite_frames = SubResource("SpriteFrames_shnt7")
+script = ExtResource("9_gg424")
+
+[node name="descriptionbox" type="Sprite2D" parent="shop/ShopSlot1/Item/ItemSprite"]
+visible = false
+z_index = 5
+position = Vector2(-242.078, 85.0233)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("10_5ohnb")
+
+[node name="ItemDescription" type="RichTextLabel" parent="shop/ShopSlot1/Item/ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("11_joksw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="AnimatedSprite2D" parent="shop/ShopSlot1/Item"]
+position = Vector2(676.343, 157.67)
+sprite_frames = SubResource("SpriteFrames_tu2m3")
+
+[node name="ShopSlot2" type="Sprite2D" parent="shop"]
+position = Vector2(94.4916, 309.176)
+script = ExtResource("2_rpmd5")
+
+[node name="Button" type="Button" parent="shop/ShopSlot2"]
+offset_left = -21.0
+offset_top = 57.0
+offset_right = 19.0
+offset_bottom = 88.0
+text = "사기
+"
+script = ExtResource("3_eck7c")
+
+[node name="SoldOut" type="Sprite2D" parent="shop/ShopSlot2"]
+position = Vector2(6, 9)
+scale = Vector2(0.479025, 0.535691)
+texture = SubResource("CompressedTexture2D_7vvrf")
+script = ExtResource("4_m0cp7")
+
+[node name="priceindicator" type="Sprite2D" parent="shop/ShopSlot2"]
+position = Vector2(-43.1963, 46.3765)
+scale = Vector2(0.082109, 0.0882284)
+texture = ExtResource("5_d7gdj")
+script = ExtResource("6_yty4e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/ShopSlot2/priceindicator"]
+offset_left = 43.8418
+offset_top = -120.46
+offset_right = 154.842
+offset_bottom = -80.46
+scale = Vector2(11.5759, 9.06901)
+
+[node name="Item" type="Node2D" parent="shop/ShopSlot2"]
+position = Vector2(-677.848, -157.304)
+script = ExtResource("7_qvhcx")
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="shop/ShopSlot2/Item"]
+z_index = 1
+position = Vector2(676.74, 157.486)
+sprite_frames = SubResource("SpriteFrames_jen0w")
+script = ExtResource("18_euo2y")
+
+[node name="descriptionbox" type="Sprite2D" parent="shop/ShopSlot2/Item/ItemSprite"]
+visible = false
+z_index = 5
+position = Vector2(-242.078, 85.0233)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("10_5ohnb")
+
+[node name="ItemDescription" type="RichTextLabel" parent="shop/ShopSlot2/Item/ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("11_joksw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="AnimatedSprite2D" parent="shop/ShopSlot2/Item"]
+position = Vector2(676.343, 157.67)
+sprite_frames = SubResource("SpriteFrames_tu2m3")
+
+[node name="ShopSlot3" type="Sprite2D" parent="shop"]
+position = Vector2(239.379, 165.216)
+script = ExtResource("24_57q7h")
+
+[node name="Button" type="Button" parent="shop/ShopSlot3"]
+offset_left = -21.0
+offset_top = 57.0
+offset_right = 19.0
+offset_bottom = 88.0
+text = "사기
+"
+script = ExtResource("25_pvmny")
+
+[node name="SoldOut" type="Sprite2D" parent="shop/ShopSlot3"]
+position = Vector2(6, 9)
+scale = Vector2(0.479025, 0.535691)
+texture = SubResource("CompressedTexture2D_7vvrf")
+script = ExtResource("4_m0cp7")
+
+[node name="priceindicator" type="Sprite2D" parent="shop/ShopSlot3"]
+position = Vector2(-40.7046, 48.4906)
+scale = Vector2(0.082109, 0.0882284)
+texture = ExtResource("5_d7gdj")
+script = ExtResource("6_yty4e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/ShopSlot3/priceindicator"]
+offset_left = 0.000488281
+offset_top = -98.5566
+offset_right = 116.0
+offset_bottom = -58.5566
+scale = Vector2(11.5759, 9.06901)
+
+[node name="Item" type="Node2D" parent="shop/ShopSlot3"]
+position = Vector2(-677.848, -157.304)
+script = ExtResource("26_8n6w3")
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="shop/ShopSlot3/Item"]
+z_index = 1
+position = Vector2(676.74, 157.486)
+sprite_frames = SubResource("SpriteFrames_shnt7")
+animation = &"new_animation"
+script = ExtResource("27_fxvud")
+
+[node name="descriptionbox" type="Sprite2D" parent="shop/ShopSlot3/Item/ItemSprite"]
+visible = false
+z_index = 5
+position = Vector2(-242.078, 85.0233)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("10_5ohnb")
+
+[node name="ItemDescription" type="RichTextLabel" parent="shop/ShopSlot3/Item/ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("11_joksw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="AnimatedSprite2D" parent="shop/ShopSlot3/Item"]
+position = Vector2(676.343, 157.67)
+sprite_frames = SubResource("SpriteFrames_tu2m3")
+
+[node name="ShopSlot4" type="Sprite2D" parent="shop"]
+position = Vector2(242.078, 309.176)
+script = ExtResource("30_0arbj")
+
+[node name="Button" type="Button" parent="shop/ShopSlot4"]
+offset_left = -21.0
+offset_top = 57.0
+offset_right = 19.0
+offset_bottom = 88.0
+text = "사기
+"
+script = ExtResource("25_pvmny")
+
+[node name="SoldOut" type="Sprite2D" parent="shop/ShopSlot4"]
+position = Vector2(6, 9)
+scale = Vector2(0.479025, 0.535691)
+texture = SubResource("CompressedTexture2D_7vvrf")
+script = ExtResource("4_m0cp7")
+
+[node name="priceindicator" type="Sprite2D" parent="shop/ShopSlot4"]
+position = Vector2(-40.7046, 48.4906)
+scale = Vector2(0.082109, 0.0882284)
+texture = ExtResource("5_d7gdj")
+script = ExtResource("6_yty4e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/ShopSlot4/priceindicator"]
+offset_left = 0.000488281
+offset_top = -98.5566
+offset_right = 116.0
+offset_bottom = -58.5566
+scale = Vector2(11.5759, 9.06901)
+
+[node name="Item" type="Node2D" parent="shop/ShopSlot4"]
+position = Vector2(-677.848, -157.304)
+script = ExtResource("26_8n6w3")
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="shop/ShopSlot4/Item"]
+z_index = 1
+position = Vector2(676.74, 157.486)
+sprite_frames = SubResource("SpriteFrames_shnt7")
+animation = &"new_animation"
+script = ExtResource("31_g71nu")
+
+[node name="descriptionbox" type="Sprite2D" parent="shop/ShopSlot4/Item/ItemSprite"]
+visible = false
+z_index = 5
+position = Vector2(-242.078, 85.0233)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("10_5ohnb")
+
+[node name="ItemDescription" type="RichTextLabel" parent="shop/ShopSlot4/Item/ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("11_joksw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="AnimatedSprite2D" parent="shop/ShopSlot4/Item"]
+position = Vector2(676.343, 157.67)
+sprite_frames = SubResource("SpriteFrames_tu2m3")
+
+[node name="battlewindow" type="Sprite2D" parent="."]
+z_index = -35
+position = Vector2(900, 204)
+scale = Vector2(0.800535, 0.800535)
+texture = ExtResource("2_37a8s")
+script = ExtResource("3_7cole")
+
+[node name="player" type="Sprite2D" parent="."]
+
+[node name="playerstat" type="Sprite2D" parent="player"]
+script = ExtResource("34_qi5jb")
+
+[node name="playerstats" type="RichTextLabel" parent="player/playerstat"]
+offset_left = -1.0
+offset_top = 407.0
+offset_right = 340.0
+offset_bottom = 645.0
+script = ExtResource("35_g3wfa")
+
+[node name="playersprite" type="Sprite2D" parent="player"]
+position = Vector2(82, 211)
+rotation = -0.174533
+scale = Vector2(0.726224, 0.726224)
+texture = ExtResource("4_gr2g7")
+script = ExtResource("5_c7fsy")
+
+[node name="hpbar" type="Sprite2D" parent="player/playersprite"]
+
+[node name="mpbar" type="Sprite2D" parent="player/playersprite"]
+
+[node name="playerweapon" type="AnimatedSprite2D" parent="player/playersprite"]
+position = Vector2(91.9635, -53.6957)
+sprite_frames = SubResource("SpriteFrames_h6rpa")
+script = ExtResource("38_bh2hf")
+
+[node name="Inventory" type="Node2D" parent="player"]
+script = ExtResource("6_pki1n")
+
+[node name="InventoryBackground" type="Sprite2D" parent="player/Inventory"]
+position = Vector2(0, 1)
+
+[node name="Inventoryslot1" type="Sprite2D" parent="player/Inventory"]
+
+[node name="Item" type="Node2D" parent="player/Inventory/Inventoryslot1"]
+position = Vector2(-282, 184)
+script = ExtResource("23_kiqwd")
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="player/Inventory/Inventoryslot1/Item"]
+position = Vector2(660, 258)
+sprite_frames = SubResource("SpriteFrames_e1bld")
+script = ExtResource("24_n1mxj")
+
+[node name="descriptionbox" type="Sprite2D" parent="player/Inventory/Inventoryslot1/Item/ItemSprite"]
+visible = false
+z_index = 5
+position = Vector2(-218, -197)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("10_5ohnb")
+
+[node name="ItemDescription" type="RichTextLabel" parent="player/Inventory/Inventoryslot1/Item/ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("11_joksw")
+
+[node name="Background" type="AnimatedSprite2D" parent="player/Inventory/Inventoryslot1/Item"]
+z_index = -1
+position = Vector2(659, 261)
+sprite_frames = SubResource("SpriteFrames_tu2m3")
+
+[node name="gold" type="Sprite2D" parent="player/Inventory"]
+position = Vector2(412, 605)
+scale = Vector2(0.253012, 0.253012)
+texture = ExtResource("5_d7gdj")
+
+[node name="goldindicator" type="RichTextLabel" parent="player/Inventory/gold"]
+offset_left = 7.90479
+offset_top = -71.1428
+offset_right = 203.905
+offset_bottom = -31.1428
+scale = Vector2(3.5418, 3.5418)
+script = ExtResource("26_c02m5")
+
+[node name="Inventoryslot2" type="Sprite2D" parent="player/Inventory"]
+position = Vector2(87, 1)
+
+[node name="Item" type="Node2D" parent="player/Inventory/Inventoryslot2"]
+position = Vector2(-282, 184)
+script = ExtResource("40_u044d")
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="player/Inventory/Inventoryslot2/Item"]
+position = Vector2(660, 258)
+sprite_frames = SubResource("SpriteFrames_e1bld")
+animation = &"new_animation"
+script = ExtResource("40_f2lpg")
+
+[node name="descriptionbox" type="Sprite2D" parent="player/Inventory/Inventoryslot2/Item/ItemSprite"]
+visible = false
+z_index = 5
+position = Vector2(-218, -197)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("10_5ohnb")
+
+[node name="ItemDescription" type="RichTextLabel" parent="player/Inventory/Inventoryslot2/Item/ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("11_joksw")
+
+[node name="Background" type="AnimatedSprite2D" parent="player/Inventory/Inventoryslot2/Item"]
+z_index = -1
+position = Vector2(659, 261)
+sprite_frames = SubResource("SpriteFrames_tu2m3")
+
+[node name="hp" type="RichTextLabel" parent="player"]
+z_index = 3
+offset_left = 27.0
+offset_top = 68.0
+offset_right = 201.0
+offset_bottom = 108.0
+script = ExtResource("45_jeuo5")
+
+[node name="globalvariables" type="Node" parent="."]
+script = ExtResource("23_rupef")
+
+[node name="pausescreen" type="Sprite2D" parent="globalvariables"]
+visible = false
+position = Vector2(372, 197)
+texture = ExtResource("33_aih8n")
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Enemysprite" type="Sprite2D" parent="Enemy"]
+position = Vector2(507, 192)
+texture = ExtResource("47_xpkwm")
+
+[node name="hp" type="RichTextLabel" parent="Enemy"]
+z_index = 3
+offset_left = 376.0
+offset_top = 51.0
+offset_right = 550.0
+offset_bottom = 91.0
+script = ExtResource("45_2hl6v")
+
+[node name="battler" type="Node2D" parent="."]
+script = ExtResource("49_xt1am")
+
+[node name="Sprite2D" type="Sprite2D" parent="battler"]
+z_index = 9
+scale = Vector2(32.8801, 21.7436)
+texture = ExtResource("12_5q6qj")
+script = ExtResource("51_vhuv6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="battler/Sprite2D"]
+z_index = 10
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 84.0
+offset_bottom = 71.0
+scale = Vector2(0.300521, 0.306803)
+text = "게임오버
+"
+script = ExtResource("51_omlw5")

@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://bsabl6us7vi6"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_ou7vc"]
+[ext_resource type="Texture2D" uid="uid://cfwpnyf5avt4j" path="res://Assets/Images/items/단검.png" id="2_7bld8"]
+[ext_resource type="Script" path="res://ItemDescription.gd" id="2_pdys0"]
+[ext_resource type="Script" path="res://ItemSprite.gd" id="3_a0b0d"]
+[ext_resource type="Texture2D" uid="uid://dxhcwv22hn8p0" path="res://Assets/Images/black.png" id="4_4xj1u"]
+[ext_resource type="Texture2D" uid="uid://jk5pbpmyu3x6" path="res://Assets/Images/items/일반배경.png" id="6_2n3tt"]
+[ext_resource type="Texture2D" uid="uid://c4gpqak2m7fiy" path="res://Assets/Images/items/언커먼배경.png" id="7_bqkgo"]
+[ext_resource type="Texture2D" uid="uid://ctcf5rjc8kxk5" path="res://Assets/Images/items/레어배경.png" id="8_uphc1"]
+[ext_resource type="Texture2D" uid="uid://6mo3eftf5g81" path="res://Assets/Images/items/레전더리배경.png" id="9_odbfk"]
+[ext_resource type="Texture2D" uid="uid://t2lxckybowip" path="res://Assets/Images/items/에픽배경.png" id="10_8wh85"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu2m3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2n3tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bqkgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uphc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8wh85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_odbfk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_ou7vc")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(659, 259)
+texture = ExtResource("2_7bld8")
+script = ExtResource("3_a0b0d")
+
+[node name="descriptionbox" type="Sprite2D" parent="ItemSprite"]
+position = Vector2(-219, 62.1627)
+scale = Vector2(4.90078, 7.58867)
+texture = ExtResource("4_4xj1u")
+
+[node name="ItemDescription" type="RichTextLabel" parent="ItemSprite/descriptionbox"]
+offset_left = -31.2195
+offset_top = -32.0429
+offset_right = 275.78
+offset_bottom = 13.9571
+scale = Vector2(0.204652, 0.161392)
+fit_content = true
+script = ExtResource("2_pdys0")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(659, 261)
+sprite_frames = SubResource("SpriteFrames_tu2m3")

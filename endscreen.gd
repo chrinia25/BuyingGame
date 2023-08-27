@@ -1,11 +1,16 @@
-extends Timer
+extends Sprite2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.start(30.0)
 	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var battler
+	battler = get_node('../')
+	if battler.gameover == true:
+		self.visible = true
+	else:
+		self.visible = false
